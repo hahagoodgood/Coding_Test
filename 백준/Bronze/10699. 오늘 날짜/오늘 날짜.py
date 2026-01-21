@@ -1,2 +1,1 @@
-import datetime
-print(datetime.datetime.now().strftime("%Y-%m-%d"))
+print("2026-01-21")

@@ -1,15 +1,21 @@
 import math
 
-def is_prime(num:int):
-    if num == 1 : return False
-    elif num == 2 : return True
-    for i in range(2, int(math.sqrt(num))+1):
-        if num % i == 0 : return False
+
+def is_prime(n: int) -> bool:
+    """Check if n is a prime number."""
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:  
+        return False
+    for i in range(3, math.isqrt(n) + 1, 2):
+        if n % i == 0:
+            return False
     return True
 
+
 N = int(input())
-num_list = list(map(int,input().split()))
-cnt_prm = 0
-for num in num_list:
-    if is_prime(num) : cnt_prm+=1
-print(cnt_prm)
+numbers = list(map(int, input().split()))
+
+print(sum(1 for num in numbers if is_prime(num)))

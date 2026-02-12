@@ -1,11 +1,7 @@
 N = int(input())
-cnt = 1
-while 1 :
-    str_cnt = str(cnt)
-    if N <= cnt :
-        print(0)
+result = 0
+for i in range(max(1, N - 63), N):
+    if i + sum(map(int, str(i))) == N:
+        result = i
         break
-    if N == cnt + sum(map(int, str_cnt)) :
-        print(cnt)
-        break
-    cnt += 1
+print(result)
